@@ -1,0 +1,32 @@
+* {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr,
+th {
+  border: 2px gray solid;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forfun {
+  font-size: 150px;
+  transition: all ease 2s;
+}
+
+.forfun:hover {
+  transform: rotate(1080deg);
+}
