@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'css/home.css' %}">
     <title>Document</title>
 </head>
 <body>
+    {% block content %}
     <header>
         <h1>자기소개</h1>
         <div class="forfun"> <a href="http://www.dgulion.com/" target="_blank">🦁</a></div>
@@ -16,7 +17,7 @@
     <table>
         <tr>
             <th>사진</th>
-            <td><img src="https://raw.githubusercontent.com/SJ-stk/sns-project/main/sns_project/main/templates/main/%EC%86%8C%EA%B0%9C%20%EC%82%AC%EC%A7%84.jpg" alt="증명사진" class="face"></td>
+            <td><img src="{% static 'images/intro.jpg'%}" alt="증명사진" class="face"></td>
         </tr>
         <tr>
             <th>이름</th>
@@ -44,5 +45,6 @@
         </tr>
     </table>
 
+    {% endblock %}
 </body>
 </html>
