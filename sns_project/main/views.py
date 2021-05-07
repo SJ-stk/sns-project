@@ -7,3 +7,7 @@ def showmain(request):
 
 def showhw(request):
     return render(request, "main/show.html")
+
+
+def favmu(request):
+    return render(request, "main/music.html")

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
 <html lang="en">
 <head>
@@ -8,7 +9,9 @@
     <title>On show.html</title>
 </head>
 <body>
+    {% block content %}
     <h1>This is show.html</h1>
     <p>I'm on updating now...</p>
+    {% endblock %}
 </body>
 </html>
