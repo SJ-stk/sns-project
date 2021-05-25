@@ -22,4 +22,7 @@ urlpatterns = [
     path("", views.showmain, name="mainpage"),
     path("show/", views.showhw, name="show"),
     path("music/", views.favmu, name="music"),
+    path("<str:id>", views.detail, name="detail"),
+    path("new/", views.new, name="new"),
+    path("create/", views.create, name="create"),
 ]
