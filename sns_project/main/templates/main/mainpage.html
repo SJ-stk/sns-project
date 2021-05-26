@@ -47,12 +47,12 @@
     <h1>글 목록</h1>
 
     <div>
-	    {% for blog in blogs %}
+	    {% for post in posts %}
 	    <div>
-		    <h3>{{blog.title}}</h3>
-		    {{blog.writer}}<br>
-		    {{blog.summary}}<br>
-            <a href="{%url 'detail' blog.id%}">more...</a>
+		    <h3>{{post.title}}</h3>
+		    {{post.writer}}<br>
+		    {{post.summary}}<br>
+            <a href="{%url 'detail' post.id%}">more...</a>
 	    </div>
 	    {%endfor%}
         <a href="{%url 'new' %}">글쓰기</a>
