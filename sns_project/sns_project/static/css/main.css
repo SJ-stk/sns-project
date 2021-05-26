@@ -1,5 +1,7 @@
-* {
-  text-align: center;
+.infotab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 table {
@@ -12,14 +14,8 @@ th {
 }
 
 a {
-  color: green;
+  color: tomato;
   text-decoration: none;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .forfun {
@@ -29,4 +25,10 @@ body {
 
 .forfun:hover {
   transform: rotate(1080deg);
+}
+
+.new_post {
+  border: yellowgreen 2px solid;
+  border-radius: 3px;
+  background-color: yellowgreen;
 }
