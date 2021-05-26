@@ -27,7 +27,7 @@ a {
   transform: rotate(1080deg);
 }
 
-.new_post {
+.btn_post {
   border: yellowgreen 2px solid;
   border-radius: 3px;
   background-color: yellowgreen;

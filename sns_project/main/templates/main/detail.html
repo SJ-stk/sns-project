@@ -7,7 +7,11 @@
 작성자 : {{post.writer}}
 날짜 : {{post.pub_date}}
 <hr>
+{% if post.image%}
+    <p><img src="{{ post.image.url }}" alt="사진 나올 곳"></p>
+{% endif %}
 <p>{{post.body}}</p>
-<a href="{%url 'main:edit' post.id %}">수정하기</a>
+<a href="{%url 'main:edit' post.id %}" class="btn_post">수정하기</a>
+<a href="{%url 'main:delete' post.id %}" class="btn_post">삭제하기</a>
 {% endblock %}
 
