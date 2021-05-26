@@ -47,7 +47,7 @@
     </div>
     
     <h1>글 목록</h1>
-    <a href="{%url 'new' %}" class="new_post">새 글쓰기</a>
+    <a href="{%url 'main:new' %}" class="new_post">새 글쓰기</a>
 
     <div>
 	    {% for post in posts %}
@@ -55,7 +55,7 @@
 		    <h3>{{post.title}}</h3>
 		    {{post.writer}}<br>
 		    {{post.summary}}
-            <a href="{%url 'detail' post.id%}">more...</a>
+            <a href="{%url 'main:detail' post.id%}">more...</a>
 	    </div>
 	    {%endfor%}
     </div>
