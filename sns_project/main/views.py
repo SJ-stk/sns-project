@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Post
+from .models import Post, Comment
 from django.utils import timezone
 
 # Create your views here.
@@ -23,7 +23,8 @@ def favmu(request):
 
 def detail(request, id):
     post = get_object_or_404(Post, pk=id)
-    return render(request, "main/detail.html", {"post": post})
+    all_comments = post.comments.all().order_by("-created_at")
+    return render(request, "main/detail.html", {"post": post, "comments": all_comments})
 
 
 def new(request):
@@ -60,4 +61,35 @@ def update(request, id):
 def delete(request, id):
     delete_post = Post.objects.get(id=id)
     delete_post.delete()
-    return redirect("main:mainpage")
+    return redirect("main:post")
+
+
+def create_comment(request, post_id):
+    if request.method == "POST":
+        post = get_object_or_404(Post, pk=post_id)
+        current_user = request.user
+        comment_content = request.POST.get("content")
+        Comment.objects.create(content=comment_content, writer=current_user, post=post)
+    return redirect("main:detail", post_id)
+
+
+def edit_comment(request, id):
+    comment = Comment.objects.get(id=id)
+    if request.user == comment.writer:
+        return render(request, "main/edit_comment.html", {"comment": comment})
+    else:
+        return redirect("main:detail", comment.post.id)
+
+
+def update_comment(request, id):
+    comment = Comment.objects.get(id=id)
+    comment.content = request.POST.get("content")
+    comment.save()
+    return redirect("main:detail", comment.post.id)
+
+
+def delete_comment(request, id):
+    comment = Comment.objects.get(id=id)
+    if request.user == comment.writer:
+        comment.delete()
+    return redirect("main:detail", comment.post.id)
