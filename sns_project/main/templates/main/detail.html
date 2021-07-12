@@ -4,8 +4,15 @@
 {% block content %}
 
 <h1>{{post.title}}</h1>
-작성자 : {{post.writer}}
-날짜 : {{post.pub_date}}
+{% if post.writer %}
+    {% if 'user' in post.writer.username %}
+        작성자 : {{ post.writer.last_name }} {{ post.writer.first_name }}
+    {% else %}
+        작성자 : {{ post.writer }}
+    {% endif %}
+{% else %}
+    작성자 : 알 수 없음
+{% endif %}
 <hr>
 {% if post.image%}
     <p><img src="{{ post.image.url }}" alt="사진 나올 곳"></p>

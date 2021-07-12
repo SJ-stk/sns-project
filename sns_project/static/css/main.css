@@ -1,3 +1,8 @@
+body {
+  margin: 0px, 30px;
+  background-color: rgb(184, 237, 149);
+}
+
 .infotab {
   display: flex;
   flex-direction: column;
@@ -14,15 +19,21 @@ th {
 }
 
 a {
-  color: green;
+  color: tomato;
   text-decoration: none;
 }
 
 .forfun {
   font-size: 150px;
-  transition: all ease 2s;
+  transition: all 2s;
 }
 
 .forfun:hover {
-  transform: rotate(1080deg);
+  font-size: 300px;
+}
+
+.btn_post {
+  border: yellowgreen 2px solid;
+  border-radius: 3px;
+  background-color: yellowgreen;
 }

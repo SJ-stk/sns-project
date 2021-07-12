@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{%if user.is_authenticated%}
+<h1>글 목록</h1>
+<a href="{%url 'main:new' %}" class="btn_post">새 글쓰기</a>
+
+<div>
+    {% for post in posts %}
+    <div>
+        <h3>{{post.title}}</h3>
+        {% if post.writer %}
+            {% if 'user' in post.writer.username %}
+                작성자 : {{ post.writer.last_name }} {{ post.writer.first_name }}
+            {% else %}
+                작성자 : {{ post.writer }}
+            {% endif %}
+        {% else %}
+            작성자 : 알 수 없음
+        {% endif %}
+        {{post.summary}}
+        <a href="{%url 'main:detail' post.id%}">more...</a>
+    </div>
+    {%endfor%}
+</div>
+{%else%}
+<h3>로그인 후 이용 가능</h3>
+<a href="{%url 'account_login'%}" class="btn btn-warning">로그인</a>
+<a href="{%url 'account_signup'%}" class="btn btn-warning">회원가입</a>
+{%endif%}
+{% endblock %}

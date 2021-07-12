@@ -5,7 +5,12 @@ from django.utils import timezone
 # Create your views here.
 def showmain(request):
     posts = Post.objects.all()
-    return render(request, "main/mainpage.html", {"posts": posts})
+    return render(request, "main/mainpage.html")
+
+
+def post(request):
+    posts = Post.objects.all()
+    return render(request, "main/post.html", {"posts": posts})
 
 
 def showhw(request):

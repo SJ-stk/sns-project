@@ -22,6 +22,7 @@ urlpatterns = [
     path("", showmain, name="mainpage"),
     path("show/", showhw, name="show"),
     path("music/", favmu, name="music"),
+    path("post/", post, name="post"),
     path("<str:id>", detail, name="detail"),
     path("new/", new, name="new"),
     path("create/", create, name="create"),
