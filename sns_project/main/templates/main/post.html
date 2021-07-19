@@ -11,9 +11,9 @@
         <h3>{{post.title}}</h3>
         {% if post.writer %}
             {% if 'user' in post.writer.username %}
-                작성자 : {{ post.writer.last_name }} {{ post.writer.first_name }}
+                작성자 : <a href="{%url 'users:mypage' post.writer.id%}">{{ post.writer.last_name }} {{ post.writer.first_name }}</a>
             {% else %}
-                작성자 : {{ post.writer }}
+                작성자 : <a href="{%url 'users:mypage' post.writer.id%}">{{ post.writer }}</a>
             {% endif %}
         {% else %}
             작성자 : 알 수 없음
