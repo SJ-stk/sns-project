@@ -2,39 +2,51 @@
 {% load static %}
 
 {% block content %}
-    <div class="infotab">
-        <header>
-            <h1>자기소개</h1>
-        </header>
-        <table >
-            <tr>
-                <th>사진</th>
-                <td><img src="{% static 'images/intro.jpg'%}" alt="증명사진" class="face"></td>
-            </tr>
-            <tr>
-                <th>이름</th>
-                <td>박상준</td>
-            </tr>
-            <tr>
-                <th>나이</th>
-                <td>22세 (2000.04.14 ~)</td>
-            </tr>
-            <tr>
-                <th>블로그 주소</th>
-                <td><a href="https://stujune-to-devjune.tistory.com/" target="_blank">Tistory</a></td>
-            </tr>
-            <tr>
-                <th>깃허브 주소</th>
-                <td><a href="https://github.com/tkdwns414" target="_blank">Github</a></td>
-            </tr>
-            <tr>
-                <th>이메일</th>
-                <td>sangjune2000@naver.com</td>
-            </tr>
-            <tr>
-                <th>출생지</th>
-                <td>경기도 군포시</td>
-            </tr>
-        </table>
-    </div>
+
+    <section class="pagesec">
+        <h1>상세 정보</h1>
+        <div style="display:flex; justify-content: space-around; margin-top:5vh;">
+            <table>
+                <tr>
+                    <th>사진</th>
+                    <td><img src="{% static 'images/intro.jpg'%}" alt="증명사진" class="face"></td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td>박상준</td>
+                </tr>
+                <tr>
+                    <th>생년월일</th>
+                    <td>2000년 4월 14일</td>
+                </tr>
+                <tr>
+                    <th>출생지</th>
+                    <td>경기도 군포시</td>
+                </tr>
+                <tr>
+                    <th>학교</th>
+                    <td>광정초등학교<br>산본중학교<br>용호고등학교<br>동국대학교 정보통신공학전공</td>
+                </tr>
+            </table>
+            <div style="display:flex; flex-direction: column; ">
+                <h4 style="position:relative; left:-5vh;">URLS</h4>
+                <br>
+                    <a href="https://stujune-to-devjune.tistory.com/" target="_blank">Tistory</a>
+                    <a href="https://github.com/tkdwns414" target="_blank">Github</a>
+                    <a href="https://www.instagram.com/sjpxxsj/?hl=ko" target="_blank">Instagram</a>
+                <br>
+                <h4 style="position:relative; left:-5vh;">How to contact</h4>
+                <br>
+                    <h6 style="position:relative; left:-2vh;">Emails</h6>
+                    <span>sangjune2000@naver.com</span>
+                    <span>sangjune2000@dogguk.edu</span>
+                <br>
+                    <h6 style="position:relative; left:-2vh;">Phone num</h6>
+                    <span>010-6289-0164</span>
+
+            </div>
+        </div>
+
+    </section>
+    
 {% endblock %}

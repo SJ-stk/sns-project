@@ -1,4 +1,6 @@
 {%extends 'base.html'%}{%load static%}{%block content%}
+<section class="pagesec">
+{%if request.user.is_authenticated%}
 <div class="container">
     <h1>
         {% if 'user' in user.username and user.username != 'user' %}
@@ -35,4 +37,10 @@
         {%endfor%}
     </div>
 </div>
+{%else%}
+<h3>로그인 후 이용 가능</h3>
+<a href="{%url 'account_login'%}" class="btn btn-warning">로그인</a>
+<a href="{%url 'account_signup'%}" class="btn btn-warning">회원가입</a>
+{%endif%}
+</section>
 {%endblock%}

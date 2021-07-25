@@ -2,6 +2,13 @@ body {
   margin: 0px, 30px;
 }
 
+.pagesec {
+  margin: 3vh 22vh;
+  padding: 3vh;
+  border-radius: 1%;
+  background-color: whitesmoke;
+}
+
 .infotab {
   display: flex;
   flex-direction: column;
@@ -15,6 +22,7 @@ table {
 tr,
 th {
   border: 2px gray solid;
+  font-size: 18px;
 }
 
 a {
@@ -24,11 +32,29 @@ a {
 
 .forfun {
   font-size: 150px;
-  transition: all 2s;
 }
 
 .forfun:hover {
-  font-size: 300px;
+  animation: 1s spin infinite;
+}
+
+@keyframes spin {
+  25% {
+    transform: rotate(0deg);
+    font-size: 150px;
+  }
+  50% {
+    transform: rotate(360deg);
+    font-size: 300px;
+  }
+  75% {
+    transform: rotate(720deg);
+    font-size: 300px;
+  }
+  100% {
+    transform: rotate(1080deg);
+    font-size: 150px;
+  }
 }
 
 .btn_post {
