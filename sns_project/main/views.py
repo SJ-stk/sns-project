@@ -17,8 +17,8 @@ def showhw(request):
     return render(request, "main/show.html")
 
 
-def favmu(request):
-    return render(request, "main/music.html")
+def introduce(request):
+    return render(request, "main/introduce.html")
 
 
 def detail(request, id):
@@ -36,6 +36,7 @@ def create(request):
     new_post.title = request.POST["title"]
     new_post.writer = request.user
     new_post.pub_date = timezone.now()
+    new_post.summary = request.POST["summary"]
     new_post.body = request.POST["body"]
     new_post.image = request.FILES.get("image")
     new_post.save()

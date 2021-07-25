@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="infotab">
+        <header>
+            <h1>자기소개</h1>
+        </header>
+        <table >
+            <tr>
+                <th>사진</th>
+                <td><img src="{% static 'images/intro.jpg'%}" alt="증명사진" class="face"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td>박상준</td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td>22세 (2000.04.14 ~)</td>
+            </tr>
+            <tr>
+                <th>블로그 주소</th>
+                <td><a href="https://stujune-to-devjune.tistory.com/" target="_blank">Tistory</a></td>
+            </tr>
+            <tr>
+                <th>깃허브 주소</th>
+                <td><a href="https://github.com/tkdwns414" target="_blank">Github</a></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td>sangjune2000@naver.com</td>
+            </tr>
+            <tr>
+                <th>출생지</th>
+                <td>경기도 군포시</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
