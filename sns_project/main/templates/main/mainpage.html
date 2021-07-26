@@ -2,5 +2,65 @@
 {% load static %}
 
 {% block content %}
-Updating
+<section class="pagesec" style="margin:3vh 15vh;">
+    <h2 style="display:inline;">Profile</h2>
+    <a href="{%url 'main:introduce'%}">more detail</a><br><br>
+
+    <h5>Name: 박상준 (ParkSangJune)</h5>
+
+    <h5>Major:</h5>
+    <ul>
+        <li>Information Communication Enginerring</li>
+        <li>DataScience Software</li>
+    </ul>
+
+    <h2>Tech stack</h2>
+
+    <details>
+        <summary><h4 style="display:inline;">Langauge</h4></summary>
+        <ul>
+            <li>Python</li>
+            <li>C lang</li>
+        </ul>
+    </details>
+    
+    <details>
+        <summary><h4 style="display:inline;">Frameworks</h4></summary>
+        <ul>
+            <li>Django</li>
+        </ul>
+    </details>
+    
+    <details>
+        <summary><h4 style="display:inline;">Others</h4></summary>
+        <ul>
+            <li>Git & Github</li>
+            <li>AWS</li>
+        </ul>
+    </details>
+
+    <br>
+    <h2>Projects</h2>
+
+    {%for post in posts%}
+        {%if post.writer.is_superuser%}
+            <a href="{%url 'main:detail' post.id%}">
+                <div class="home_div1">
+                    <div class="home_div2">
+                        {%if post.image%}
+                            <img src="{{ post.image.url }}" alt="프로젝트 이미지" style="width:100%; padding:3%;">
+                        {%else%}
+                            <img src="{% static 'images/default.jpg'%}" style="width:100%; padding:3%;">
+                        {%endif%}
+                    </div>
+                    <br>
+                    <h4 style="text-align: center;">{{post.title}}</h4>
+                </div>
+            </a>
+        {%endif%}
+    {%endfor%}
+    
+    
+
+</section>
 {% endblock %}
