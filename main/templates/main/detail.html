@@ -19,7 +19,11 @@
             <img src="{{ post.image.url }}"  style="width:60%;" alt="사진 나올 곳">
         </p>
     {% endif %}
-    <p>{{post.body}}</p>
+    {% if post.summary %}
+        <h3>{{post.summary}}</h3>
+    {% endif %}
+
+    <p><pre>{{post.body}}</pre></p>
     {%if request.user == post.writer%}
         <a href="{%url 'main:edit' post.id %}" class="btn_post">수정하기</a>
         <a href="{%url 'main:delete' post.id %}" class="btn_post">삭제하기</a>
